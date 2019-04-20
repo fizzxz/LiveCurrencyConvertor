@@ -1,4 +1,4 @@
-namespace Stocks_updateLive
+namespace CurrencyConvertor
 {
     partial class Form1
     {
@@ -37,9 +37,9 @@ namespace Stocks_updateLive
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(191, 351);
+            this.linkLabel1.Location = new System.Drawing.Point(250, 457);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(418, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(375, 17);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Click here to continue learning how to build a desktop app!";
@@ -48,17 +48,18 @@ namespace Stocks_updateLive
             // debugInstructionsLabel
             // 
             this.debugInstructionsLabel.AutoSize = true;
-            this.debugInstructionsLabel.Location = new System.Drawing.Point(146, 107);
+            this.debugInstructionsLabel.Location = new System.Drawing.Point(195, 207);
             this.debugInstructionsLabel.Name = "debugInstructionsLabel";
-            this.debugInstructionsLabel.Size = new System.Drawing.Size(532, 20);
+            this.debugInstructionsLabel.Size = new System.Drawing.Size(477, 17);
             this.debugInstructionsLabel.TabIndex = 1;
             this.debugInstructionsLabel.Text = "Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app!";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(325, 240);
+            this.button1.Location = new System.Drawing.Point(351, 327);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 43);
+            this.button1.Size = new System.Drawing.Size(130, 34);
             this.button1.TabIndex = 2;
             this.button1.Text = "Click Me!";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,21 +69,22 @@ namespace Stocks_updateLive
             // 
             this.helloWorldLabel.AutoSize = true;
             this.helloWorldLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helloWorldLabel.Location = new System.Drawing.Point(303, 30);
+            this.helloWorldLabel.Location = new System.Drawing.Point(334, 69);
             this.helloWorldLabel.Name = "helloWorldLabel";
-            this.helloWorldLabel.Size = new System.Drawing.Size(192, 37);
+            this.helloWorldLabel.Size = new System.Drawing.Size(161, 31);
             this.helloWorldLabel.TabIndex = 3;
             this.helloWorldLabel.Text = "Hello World!";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(903, 970);
             this.Controls.Add(this.helloWorldLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.debugInstructionsLabel);
             this.Controls.Add(this.linkLabel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -97,5 +99,6 @@ namespace Stocks_updateLive
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label helloWorldLabel;
     }
+
 }
 

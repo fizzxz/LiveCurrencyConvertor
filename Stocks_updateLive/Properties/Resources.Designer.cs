@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Stocks_updateLive.Properties
+namespace CurrencyConvertor.Properties
 {
 
 
