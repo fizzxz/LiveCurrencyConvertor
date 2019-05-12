@@ -35,6 +35,7 @@ namespace CurrencyConvertor
             this.CurrencyExchangeLabel2 = new System.Windows.Forms.Label();
             this.CurrencyValue1 = new System.Windows.Forms.TextBox();
             this.CurrencyValue2 = new System.Windows.Forms.TextBox();
+            this.switchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CurrencyExchangeLabel1
@@ -73,7 +74,7 @@ namespace CurrencyConvertor
             // 
             this.CurrencyValueBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrencyValueBox2.FormattingEnabled = true;
-            this.CurrencyValueBox2.Location = new System.Drawing.Point(254, 57);
+            this.CurrencyValueBox2.Location = new System.Drawing.Point(356, 57);
             this.CurrencyValueBox2.Margin = new System.Windows.Forms.Padding(2);
             this.CurrencyValueBox2.Name = "CurrencyValueBox2";
             this.CurrencyValueBox2.Size = new System.Drawing.Size(166, 28);
@@ -82,7 +83,7 @@ namespace CurrencyConvertor
             // CurrencyExchangeLabel2
             // 
             this.CurrencyExchangeLabel2.AutoSize = true;
-            this.CurrencyExchangeLabel2.Location = new System.Drawing.Point(252, 41);
+            this.CurrencyExchangeLabel2.Location = new System.Drawing.Point(354, 41);
             this.CurrencyExchangeLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CurrencyExchangeLabel2.Name = "CurrencyExchangeLabel2";
             this.CurrencyExchangeLabel2.Size = new System.Drawing.Size(151, 13);
@@ -102,18 +103,29 @@ namespace CurrencyConvertor
             // CurrencyValue2
             // 
             this.CurrencyValue2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrencyValue2.Location = new System.Drawing.Point(254, 105);
+            this.CurrencyValue2.Location = new System.Drawing.Point(356, 105);
             this.CurrencyValue2.Margin = new System.Windows.Forms.Padding(2);
             this.CurrencyValue2.Name = "CurrencyValue2";
             this.CurrencyValue2.Size = new System.Drawing.Size(166, 35);
             this.CurrencyValue2.TabIndex = 7;
             this.CurrencyValue2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CurrencyValue2_KeyPress);
             // 
+            // switchButton
+            // 
+            this.switchButton.Location = new System.Drawing.Point(238, 41);
+            this.switchButton.Name = "switchButton";
+            this.switchButton.Size = new System.Drawing.Size(80, 44);
+            this.switchButton.TabIndex = 8;
+            this.switchButton.Text = "<-Switch->";
+            this.switchButton.UseVisualStyleBackColor = true;
+            this.switchButton.Click += new System.EventHandler(this.switchButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 275);
+            this.ClientSize = new System.Drawing.Size(589, 386);
+            this.Controls.Add(this.switchButton);
             this.Controls.Add(this.CurrencyValue2);
             this.Controls.Add(this.CurrencyValue1);
             this.Controls.Add(this.CurrencyExchangeLabel2);
@@ -138,6 +150,7 @@ namespace CurrencyConvertor
         private System.Windows.Forms.Label CurrencyExchangeLabel2;
         private System.Windows.Forms.TextBox CurrencyValue1;
         private System.Windows.Forms.TextBox CurrencyValue2;
+        private System.Windows.Forms.Button switchButton;
     }
 
 }

@@ -12,13 +12,14 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-// This is the code for your desktop app.
-// Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
+
 
 namespace CurrencyConvertor
 {
     public partial class Form1 : Form
     {
+        List<string> CurrencyCodes = ImportCurrencyCodes();
+        List<string> CurrencyNames = ImportCurrencyNames();
         public Form1()
         {
             
@@ -28,11 +29,7 @@ namespace CurrencyConvertor
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-            List<string> CurrencyCodes = ImportCurrencyCodes();
-            List<string> CurrencyNames = ImportCurrencyNames();
-
+                      
             Dictionary<string, string> dict = initialiseCurrencyDictionary(CurrencyCodes, CurrencyNames);
             System.Object[] ItemObject = new System.Object[dict.Count];
             foreach (var item in dict)
@@ -139,18 +136,22 @@ namespace CurrencyConvertor
             {
                 MessageBox.Show("Need to enter numerical values to convert!");
             }
-            else if (CurrencyValueBox1.SelectedIndex > -1 && CurrencyValueBox2.SelectedIndex > -1)
+            else
             {
-                List<string> CurrencyCodes = ImportCurrencyCodes();
-                List<string> CurrencyNames = ImportCurrencyNames();
+               
 
                 Dictionary<string, string> dict = initialiseCurrencyDictionary(CurrencyNames,CurrencyCodes);
 
                 if (dict.TryGetValue(CurrencyValueBox1.Text, out string result))
                 {
                     List<CurrencyName> x = ImportCurrencyJSON(result);
-
-                    if (dict.TryGetValue(CurrencyValueBox2.Text, out string result2))
+                    if (CurrencyValueBox1.Text == CurrencyValueBox2.Text)
+                    {
+                        double d = 0.0;
+                        d = double.Parse(CurrencyValue1.Text) * 1.0;
+                        CurrencyValue2.Text = d.ToString();
+                    }
+                    else if (dict.TryGetValue(CurrencyValueBox2.Text, out string result2))
                     {
                         foreach (CurrencyName f in x)
                         {
@@ -163,18 +164,26 @@ namespace CurrencyConvertor
                             }
                         }
                     }
+                    else{
+                        MessageBox.Show("Could not find the specified Currency to convert to, Please choose off the list.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Could not find the specified Currency, Please choose off the list.");
+                    MessageBox.Show("Could not find the specified Currency to convert from, Please choose off the list.");
                 }
 
             }
-            else
-            {
-                MessageBox.Show("Need to choose currency values to convert!");
-            }
+            
                
+        }
+        private void switchButton_Click(object sender, EventArgs e)
+        {
+            string swap1, swap2;
+            swap1 = CurrencyValueBox1.Text;
+            swap2 = CurrencyValueBox2.Text;
+            CurrencyValueBox2.Text = swap1;
+            CurrencyValueBox1.Text = swap2;
         }
         private List<CurrencyName> ImportCurrencyJSON(string Currency)
         {
@@ -239,6 +248,8 @@ namespace CurrencyConvertor
             }
             return CurrencysData;
         }
+
+       
     }
 
     public struct CurrencyName
