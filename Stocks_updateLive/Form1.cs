@@ -179,11 +179,15 @@ namespace CurrencyConvertor
         }
         private void switchButton_Click(object sender, EventArgs e)
         {
-            string swap1, swap2;
-            swap1 = CurrencyValueBox1.Text;
-            swap2 = CurrencyValueBox2.Text;
-            CurrencyValueBox2.Text = swap1;
-            CurrencyValueBox1.Text = swap2;
+            string swapCurr1, swapCurr2, swapCurrVal1, swapCurrVal2;
+            swapCurr1 = CurrencyValueBox1.Text;
+            swapCurr2 = CurrencyValueBox2.Text;
+            swapCurrVal1 = CurrencyValue1.Text;
+            swapCurrVal2 = CurrencyValue2.Text;
+            CurrencyValueBox2.Text = swapCurr1;
+            CurrencyValueBox1.Text = swapCurr2;
+            CurrencyValue1.Text = swapCurrVal2;
+            CurrencyValue2.Text = swapCurrVal1;
         }
         private List<CurrencyName> ImportCurrencyJSON(string Currency)
         {
@@ -254,23 +258,108 @@ namespace CurrencyConvertor
 
     public struct CurrencyName
     {
-        public string Code;
-        public string AlphaCode;
-        public string NumericCode;
-        public string Name;
-        public double Rate;
-        public string Date;
-        public double InverseRate;
+        private string code;
+        private string alphaCode;
+        private string numericCode;
+        private string name;
+        private double rate;
+        private string date;
+        private double inverseRate;
 
-        public CurrencyName(string code, string alphaCode, string numericCode, string name, double rate, string date, double inverseRate)
+        public string Code {
+            get {
+                return code;
+            }
+            set {
+                code = value;
+            }
+
+        }
+
+
+        public string AlphaCode
         {
-            Code = code;
-            AlphaCode = alphaCode;
-            NumericCode = numericCode;
-            Name = name;
-            Rate = rate;
-            Date = date;
-            InverseRate = inverseRate;
+            get
+            {
+                return alphaCode;
+            }
+            set
+            {
+                alphaCode = value;
+            }
+
+        }
+        public string NumericCode
+        {
+            get
+            {
+                return numericCode;
+            }
+            set
+            {
+                numericCode = value;
+            }
+
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+
+        }
+        public double Rate
+        {
+            get
+            {
+                return rate;
+            }
+            set
+            {
+                rate = value;
+            }
+
+        }
+        public string Date
+        {
+            get
+            {
+                return date;
+            }
+            set
+            {
+                date = value;
+            }
+
+        }
+        public double InverseRate
+        {
+            get
+            {
+                return inverseRate;
+            }
+            set
+            {
+                inverseRate = value;
+            }
+
+        }
+
+
+        public CurrencyName(string _code, string _alphaCode, string _numericCode, string _name, double _rate, string _date, double _inverseRate)
+        {
+            code = _code;
+            alphaCode = _alphaCode;
+            numericCode = _numericCode;
+            name = _name;
+            rate = _rate;
+            date = _date;
+            inverseRate = _inverseRate;
         }
 
     }
@@ -306,4 +395,4 @@ namespace CurrencyConvertor
             }
         }
     }
-}
+}  
